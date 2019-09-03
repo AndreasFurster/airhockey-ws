@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3000;
+
 var express = require('express');
 
 var app = express();
@@ -48,6 +50,4 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(PORT, function(){
-  console.log('listening on *:3000');
-});
+http.listen(PORT, () => console.log(`Listening on ${ PORT }`));
